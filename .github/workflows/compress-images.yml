@@ -1,21 +1,18 @@
-name: Compress Images
+name: Compress Images Direct
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
 jobs:
   build:
-    name: calibreapp/image-actions
+    name: Optimize and Commit Images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Compress Images
-        uses: calibreapp/image-actions@main
+      - name: Optimize Images
+        uses: calibreapp/image-actions@1.1.0
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          compressOnly: false
-          pushBehavior: branch
