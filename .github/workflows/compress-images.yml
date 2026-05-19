@@ -1,0 +1,21 @@
+name: Compress Images
+on:
+  push:
+    branches:
+      - main # Change this if your default branch is 'master'
+  workflow_dispatch: # Allows you to run this manually whenever you want
+
+jobs:
+  build:
+    name: calibreapp/image-actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Compress Images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          # Compress JPEG/PNG. For maximum compression, set compressOnly: false
+          compressOnly: true
