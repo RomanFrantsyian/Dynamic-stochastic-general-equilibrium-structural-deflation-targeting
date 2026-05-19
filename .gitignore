@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Generated outputs
+**/output/*.parquet
+**/output/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
